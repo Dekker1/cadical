@@ -305,6 +305,8 @@ struct External {
     return res;
   }
 
+  int current_ival (int elit) const; // Implemented in 'internal.hpp'.
+
   bool flip (int elit);
   bool flippable (int elit);
 

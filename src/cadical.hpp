@@ -415,6 +415,14 @@ public:
   //
   bool is_decision (int lit);
 
+  // Get current value (-lit=false, lit=true, 0=UNDEF) of valid non-zero
+  // observed literal.
+  //
+  //   require (VALID_OR_SOLVING)
+  //   ensure (VALID_OR_SOLVING)
+  //
+  int get_current_val (int lit);
+
   // ====== END IPASIR-UP ==================================================
 
   //------------------------------------------------------------------------

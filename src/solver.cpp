@@ -1369,6 +1369,16 @@ bool Solver::is_decision (int lit) {
   return res;
 }
 
+int Solver::get_current_val (int lit) {
+  TRACE ("get_current_val", lit);
+  REQUIRE_VALID_OR_SOLVING_STATE ();
+  REQUIRE_VALID_LIT (lit);
+  int res = external->current_ival (lit);
+  LOG_API_CALL_RETURNS ("get_current_val", lit, res);
+  assert (res == lit || res == -lit || res == 0);
+  return res;
+}
+
 /*------------------------------------------------------------------------*/
 
 bool Solver::traverse_clauses (ClauseIterator &it) const {
